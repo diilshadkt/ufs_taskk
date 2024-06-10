@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ufs_task/core/constants/text_constants.dart';
 import 'package:ufs_task/core/theme/theme.dart';
 import 'package:ufs_task/feature_1/widgets/courses_listview_widget.dart';
+import 'package:ufs_task/feature_1/widgets/find_mentor_widget.dart';
 import 'package:ufs_task/feature_1/widgets/main_container.dart';
 import 'package:ufs_task/feature_1/widgets/mock_tests_widget.dart';
 
@@ -15,12 +16,12 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            MainContainerWidget(),
+            const MainContainerWidget(),
             //text recently played
-            Row(
+            const Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 20, bottom: 7),
+                  padding: EdgeInsets.only(left: 15, top: 20, bottom: 7),
                   child: Text(
                     txtRecentlyPlayed,
                     style: TextStyle(
@@ -51,7 +52,7 @@ class HomePage extends StatelessWidget {
                           height: MediaQuery.sizeOf(context).height / 7,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage(
                                       "assets/images/img_nature.jpeg"))),
                         ),
@@ -65,9 +66,9 @@ class HomePage extends StatelessWidget {
                         )
                       ]),
                     ),
-                    Padding(
+                    const Padding(
                       padding:
-                          const EdgeInsets.only(left: 6, top: 8, right: 20),
+                          EdgeInsets.only(left: 6, top: 8, right: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -95,7 +96,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 17,
             ),
             //Explore courses button
@@ -110,7 +111,7 @@ class HomePage extends StatelessWidget {
                         backgroundColor: Colors.blue,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -129,11 +130,12 @@ class HomePage extends StatelessWidget {
                     )),
               ),
             ),
+
             //mock tests
-            Row(
+            const Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 20, bottom: 7),
+                  padding: EdgeInsets.only(left: 15, top: 20, bottom: 7),
                   child: Text(
                     txtMockTests,
                     style: TextStyle(
@@ -144,17 +146,46 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
-              children: [MockTestsWidgets(), MockTestsWidgets()],
+            const Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: Row(
+                children: [
+                  MockTestsWidgets(
+                    text: txtReading,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  MockTestsWidgets(
+                    text: txtListening,
+                  )
+                ],
+              ),
             ),
-            Row(
-              children: [MockTestsWidgets(), MockTestsWidgets()],
+            const SizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: Row(
+                children: [
+                  MockTestsWidgets(
+                    text: txtWriting,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  MockTestsWidgets(
+                    text: txtSpeaking,
+                  )
+                ],
+              ),
             ),
             //popular courses
-            Row(
+            const Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 20, bottom: 7),
+                  padding: EdgeInsets.only(left: 15, top: 20, bottom: 7),
                   child: Text(
                     txtPopularCourses,
                     style: TextStyle(
@@ -170,6 +201,40 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          unselectedLabelStyle:
+              const TextStyle(color: Colors.grey, fontSize: 14),
+          fixedColor: Colors.white,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.blue,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.book_online_outlined,
+                color: grey,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.support,
+                color: grey,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: grey,
+              ),
+              label: "",
+            ),
+          ]),
     );
   }
 }

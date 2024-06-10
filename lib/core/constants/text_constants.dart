@@ -9,3 +9,18 @@ const txtRecentlyDescription =
 const txtTime = "20:45/35:12";
 const txt35 = "35%";
 const txtButton = "Explore Courses";
+const txtMockTests = "Mock Tests";
+const txtReading = "Reading";
+
+const txtListening = "Listening";
+
+const txtWriting = "Writing";
+
+const txtSpeaking = "Speaking";
+const txtPopularCourses = "Popular Courses";
+const txtDescriptionPopularCourse =
+    "OET Beginner special\nclass and preparation\nTips";
+const txt54 = "54";
+const txt48hrs = "48 Hrs";
+const txt5000 = "₹ 5000";
+const txtRating = "⭐4.5";

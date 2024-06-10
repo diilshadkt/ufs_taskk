@@ -11,86 +11,84 @@ class MainContainerWidget extends StatelessWidget {
       Container(
           width: MediaQuery.sizeOf(context).width,
           height: MediaQuery.sizeOf(context).height / 3,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: primaryColor,
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(17),
                 bottomRight: Radius.circular(17)),
           )),
       ClipRRect(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(17), bottomRight: Radius.circular(17)),
         child: Image.asset(
           "assets/images/img_main.jpeg",
           fit: BoxFit.cover,
-          color: Color(0xff0d69ff).withOpacity(1.0),
+          color: Color.fromARGB(255, 20, 69, 150).withOpacity(1.0),
           colorBlendMode: BlendMode.hardLight,
         ),
       ),
       Positioned(
         top: 50,
-        left: 18,
-        child: Container(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundImage:
-                        AssetImage("assets/images/img_profile.jpeg"),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+        left: 15,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/img_profile.jpeg"),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      txtName,
+                      style:
+                          TextStyle(color: white, fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      txtDate,
+                      style: TextStyle(
+                          color: white70, fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  width: 70,
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width / 4,
+                  height: MediaQuery.sizeOf(context).height / 20,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.6),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(50))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
-                        txtName,
-                        style: TextStyle(
-                            color: white, fontWeight: FontWeight.w700),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.search,
+                          color: white,
+                          size: 30,
+                        ),
                       ),
-                      Text(
-                        txtDate,
-                        style: TextStyle(
-                            color: white70, fontWeight: FontWeight.w500),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.alarm,
+                          color: white,
+                        ),
                       )
                     ],
                   ),
-                  SizedBox(
-                    width: 65,
-                  ),
-                  Container(
-                    width: MediaQuery.sizeOf(context).width / 4,
-                    height: MediaQuery.sizeOf(context).height / 20,
-                    decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.6),
-                        borderRadius: BorderRadius.all(Radius.circular(50))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.search,
-                            color: white,
-                            size: 30,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.alarm,
-                            color: white,
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
+                )
+              ],
+            )
+          ],
         ),
       ),
       // animation book
@@ -112,7 +110,7 @@ class MainContainerWidget extends StatelessWidget {
             width: 190,
           )),
       // text
-      Positioned(
+      const Positioned(
         top: 180,
         left: 100,
         child: Column(
@@ -138,7 +136,7 @@ class MainContainerWidget extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(width: 1, color: white),
               borderRadius: BorderRadius.circular(50),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                   end: Alignment.topLeft,
                   begin: Alignment.bottomRight,
                   colors: <Color>[
@@ -146,7 +144,7 @@ class MainContainerWidget extends StatelessWidget {
                     Color.fromARGB(255, 235, 233, 233),
                   ]),
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 txtAsk,
                 style: TextStyle(
